@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,head{
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 2;
+}
+.t1{
+    color: red;
+    display: flex;
+    justify-content: left;
+}
+.t2{
+    color: blue;
+    display: flex;
+    justify-content: left;
+}
+.t3{
+    color: brown;
+    display: flex;
+    justify-content: left;
+}
+.center{
+    max-width: 600px;
+    margin: 200px auto;
+    padding: 20px;
+    background-color: #d5e3e6;
+    border-radius: 10px;
+}
+.t1.dx{
+    font-size: 32px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    word-spacing: 5px;
+    text-align: center;
+}
+.t2.dx{
+    font-size: 32px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    word-spacing: 5px;
+    text-align: center;
+}
+.t3.dx{
+    font-size: 32px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    word-spacing: 5px;
+    text-align: center;
+}
+.card{
+    background-color: #fff;
+    margin: 10px;
+    padding-left: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px black;
+}
+.card-sporty{
+    background: #fff url(./shose1.jpg) no-repeat center right/150px ;
+}
+.card-casual{
+    background: #d5e3e6 url(./shose2.jpg) no-repeat center right/150px;
+}
+.card-normal{
+    background: #fff url(./shose3.jpg) no-repeat center right/150px;
+}
+p::first-letter{
+    text-transform: uppercase;
+}
+.b1{
+    background-color: red;
+    color: white;
+    border-radius: 8px;
+    height: 30px;
+    width: 100px;
+    padding: 5px 0;
+    margin: 5px 0;
+}
+.b2{
+    background-color:blue;
+    color: white;
+    border-radius: 8px;
+    height: 30px;
+    width: 100px;
+    padding: 5px 0;
+    margin: 5px 0;
+}
+.b3{
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    height: 30px;
+    width: 100px;
+    padding: 5px 0;
+    margin: 5px 0;
+}
+button:hover{
+    background-color: aqua;
+    color: black;
+    cursor: pointer ;
+}

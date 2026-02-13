@@ -1,0 +1,79 @@
+/* 全局重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 顶部标题栏 */
+.s1 {
+    height: 100px;
+    background-color: coral;
+    display: flex;
+    align-items: center;
+    padding: 0 30px; /* 修正 padding 写法，上下0 左右30 */
+    color: white; /* 文字加白色，更清晰 */
+}
+
+/* 导航栏 */
+.p1 {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* 加大间距，更美观 */
+    margin: 10px 30px; /* 左右和正文对齐 */
+    align-items: center; /* 导航文字垂直居中 */
+}
+.p1 ul li {
+    list-style: none; /* 去掉默认列表点 */
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+/* 主体内容容器 */
+.p2 {
+    display: flex;
+    gap: 30px; /* 主内容和侧边栏加间距，替代 margin 更合理 */
+    margin: 30px;
+    align-items: flex-start; /* 顶部对齐，避免侧边栏被拉伸 */
+}
+
+/* 主内容区 */
+.p22 {
+    flex: 3; /* 用比例替代固定值，布局更灵活 */
+}
+.p22 h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+.p22 p {
+    margin: 15px 0; /* 修正 p 标签 margin，去掉 auto（块级元素 auto 会居中） */
+    line-height: 1.6; /* 行高，文字更易读 */
+    color: #555;
+}
+
+/* 侧边栏 */
+.sidebar {
+    flex: 1; /* 和主内容 3:1 比例，更协调 */
+    min-width: 200px; /* 保证侧边栏最小宽度 */
+}
+
+/* 侧边栏标题框（coral 橙色） */
+.sh3 {
+    background: coral;
+    color: white;
+    padding: 10px 15px; /* 加内边距，文字不贴边 */
+    margin-bottom: 15px; /* 和下面列表拉开间距 */
+}
+
+/* 侧边栏列表 + 下划线样式（和 coral 框统一） */
+.su1 ul {
+    list-style: none; /* 去掉默认列表点 */
+}
+.su1 ul li {
+    display: inline-block; /* 下划线仅包裹文字 */
+    border-bottom: 2px solid coral; /* 下划线颜色和标题框一致 */
+    text-decoration: none; /* 清空默认下划线 */
+    padding-bottom: 2px; /* 文字和下划线间距 */
+    margin: 8px 0; /* 列表项垂直间距 */
+    color: #333;
+}

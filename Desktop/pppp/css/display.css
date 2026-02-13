@@ -1,0 +1,17 @@
+*{
+    /* border: 1px solid red; */
+}
+.none-el{
+    display: none;
+}
+.hidden-el{
+    visibility: hidden;
+}
+p{
+    /* inline 會導致一些指令用不了 */
+    display: inline;
+    /* padding: 100px; */
+}
+a{
+    display: block;
+}

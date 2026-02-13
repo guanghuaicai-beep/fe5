@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: solid red 2px; */
+}
+ul{
+    margin: 3px auto;
+    text-align: left;
+    margin-left: 15px;
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.5;
+    background-color: #22264a;
+}
+main{
+    max-width: 1100px;
+    margin: 0 auto 20px;
+    background-color: #fff;
+}
+article{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 30px;
+    margin-top: 125px;
+}
+.card{
+    padding: 20px;
+    /* border: red 1px solid; */
+    text-align: center; 
+    /* flex: 1 1 300px; */
+    min-width: 300px;
+    flex-shrink: 0;
+    box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.1);
+}
+header{
+    font-size: 25px;
+    background-color: #fff;
+    margin-top: 40px;
+    padding: 10px;
+}
+.card.card-pro header{
+    background: linear-gradient(to right,lightblue,purple);
+}
+.card.card-emterprise header{
+    background: linear-gradient(to right,pink,orange);
+}
+.card.card-pro header,.card.card-emterprise header{
+    color: #fff;
+}
+section{
+    /* margin-left: 100px; */
+    width: 260px;
+    margin: 10px;
+    text-align: center;
+}
+.price{
+    font-size: 40px;
+    font-weight: 900;
+}
+sup{
+    font-size: 15px;
+}
+sup{
+    letter-spacing: 3px;
+}
+span{
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.content{
+    font-size: 20px;
+    margin: 15px auto;
+}
+a,.card-pro a:hover{
+    padding: 10px 15px;
+    background-color: #fff;
+    color: #22264a;
+    border: 2px black solid;
+    border-radius: 5px;
+    display: block;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 20px;
+    margin: 20px auto;
+}
+a:hover,.card-pro a{
+    color:white;
+    background-color: black;
+}
+ul {
+      /* 隐藏默认标记 */
+    list-style: none;
+      /* 手动设置缩进，替代默认的padding */
+    padding-left: 2rem;
+    margin: 0;
+}
+li {
+    color: #333;
+    margin: 8px 0;
+    /* 让before和文字在一行 */
+    position: relative;
+}
+    /* 自定义标记 */
+li::before {
+    content: "✔"; /* 圆点标记，数字列表可用 "1. " "2. " */
+    color: green; /* 标记颜色 */
+      /* 定位到默认标记的位置 */
+    position: absolute;
+    left: -1.2rem;
+    font-size: 1rem;
+}
+@media (max-width:768px) {
+    article{
+        flex-direction: column;
+    }
+    .card{
+        margin: 2rem;
+        padding: 40px,30px;
+    }
+    section{
+        width: 360px;
+    }
+}

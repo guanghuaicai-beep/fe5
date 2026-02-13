@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML,CSS,JvaaScript">
+    <title>Document</title>
+    <style>
+        p {
+            background-color: yellow;
+        }
+        a {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello program</h1>
+    <!-- 長線 -->
+    <hr>
+    <p>111</p>
+    <h2>html</h2>
+    <!-- 增加距離 -->
+    <br>
+    <br>
+    <br>
+    <h3>css</h3>
+    <h4>jscript</h4>
+    <h5>c++</h5>
+    <h6>python</h6>
+    <p>this is a paragraph</p>
+    <p style="background-color: blue;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis eligendi facere non animi voluptatibus neque. Architecto quis magni quas unde!</p>
+    <!-- 特殊字體 -->
+    <p>this is <strong>aaaaaa</strong> test</p>
+    <p>this is <em>emphaiszed</em></p>
+    <p>this is <mark>highlighted</mark></p>
+    <p>this is <del>deleted</del></p>
+    <p>this is <ins>inserted</ins></p>
+    <p>this is <sub>subscript</sub></p>
+    <p>this is <sup>superscript</sup></p>
+    <!-- 無序列 -->
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ul>
+    <!-- 有序列 -->
+    <ol>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ol>
+    <!-- 混合序列 -->
+    <ul>
+        <li>item1</li>
+            <ul>
+                <li>item1</li>
+                <li>item2</li>
+                <li>item3</li>
+            </ul>
+        <li>item2</li>
+            <ol>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ol>
+        <li>item3</li>
+    </ul>
+    <ol>
+        <li>item4</li>
+            <ol>
+                <li>item5</li>
+                <li>item6</li>
+                <li>item7</li>
+            </ol>
+    </ol>
+    <!-- 外部連接網頁 -->
+    <!-- tatget保證不會覆蓋原先的網頁 -->
+    <a href="http://www.google.com" target="_blank">谷歌</a>
+    <p style="color: red;"><a href="http://www.baidu.com">百度</a></p>
+    <!-- 內部連結網頁 -->
+    <a href="about.html" target="_blank">about</a>
+    <!-- 發送郵件 -->
+    <a href="mailto:example@example.com">send an email</a>
+    <!-- 跳轉pdf -->
+    <a href="zs.pdf">download</a>
+    <!-- 上下匹配 可以通過上面設置的id跳轉到對應的位置 -->
+    <a href="#service">跳轉</a>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, maxime!</p>
+    <p id="service">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, fugiat?
+    </p>
+    <!-- alt在路徑錯誤的時候會提示文字 -->
+    <img src="./123.jpg" alt="abc" width="350" height="400">
+    <!-- 可以在圖片下方加上文字 -->
+    <figure>
+        <img src="./123.jpg" alt="abc" width="350" height="400">
+        <figcaption>Fig.1</figcaption>
+    </figure>
+    <!-- 有幾個空格就會顯示幾個空格 -->
+    <pre>this is a       line</pre>
+    <!-- 可以讓代碼認識特殊符號-->
+    <code>&lt;h1&gt;this is a line&lt;/h1&gt;</code>
+    <code>&copy; &reg; &trade; &deg;</code>
+    <code>&nbsp;</code>
+    <!-- 佔位符
+    &gt; >
+    &lt; <
+    &amp; &
+    &quot; “
+    &apos; ‘
+    &nbsp; space
+    &copy; ©
+    &reg; ®
+    &trade; ™
+    &deg; °
+    -->
+</body>
+</html>

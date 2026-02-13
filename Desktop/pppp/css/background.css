@@ -1,0 +1,40 @@
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+}
+.hero{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    background:linear-gradient(to bottom left,coral,lightgreen);
+    /* background-color: coral; */
+    /* background-image: url(./texture.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background: url(./texture.png) no-repeat cover/center; */
+}
+.hero h1{
+    font-size: 40px;
+    color: white;
+}
+.hero p{
+    font-size: 18px;
+    color: #fff;
+}
+.hero a{
+    text-decoration: none;
+    color: #333;
+}
+.hero a:hover{
+    color: purple;
+}
+.hero a:active{
+    color: blue;
+}
+/*.hero a:visited{
+    color: red;
+} */

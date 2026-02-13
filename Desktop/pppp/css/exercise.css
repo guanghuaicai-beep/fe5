@@ -1,0 +1,15 @@
+h1{
+    background-color: purple;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    padding: 5px;
+}
+.zt1{
+    color: purple;
+    font-size: 25px;
+}
+.zt2{
+    line-height: 1;
+    margin: 10px 0;
+}

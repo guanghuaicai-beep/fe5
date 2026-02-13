@@ -1,0 +1,58 @@
+html,head{
+    font-family: 'Courier New', Courier, monospace;
+    /* border: 3px solid red; */
+}
+.center{
+    /* grid 垂直劇中 */
+    /* flex 水平劇中*/
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+    gap: 5px;
+}
+.card{
+    width: 400px;
+    text-align: left;
+    padding: 10px;
+    border-radius: 8px;
+    color: #000;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+}
+.card-content{
+    flex: 1;
+    padding-right: 15px;
+}
+.t1{
+    color: red;
+}
+.t2{
+    color: blue;
+}
+.t3{
+    color: black;
+}
+button{
+    border-radius: 8px;
+    height: 30px;
+}
+.b1{
+    background-color: red;
+    color: white;
+}
+.b2{
+    background-color: blue;
+    color: white;
+}
+.b3{
+    background-color: black;
+    color: white;
+}
+img{
+    width: 130px;
+    height: auto;
+    border-radius: 4px;
+}

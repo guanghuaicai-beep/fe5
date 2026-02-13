@@ -1,0 +1,40 @@
+.bg1{
+    position: relative;
+    top: 150px;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    
+}
+.c1{
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    width: 400px;
+    height: 300px;
+}
+button{
+    background-color: orange;
+    color: white;
+    border-radius: 8px;
+    width: 70%;
+}
+input{
+    width: 70%;
+}
+.z1{
+    font-size: 20px;
+    padding: 0px 20px 5px 20px;
+}
+.z2{
+    font-size: 15px;
+    padding: 0px 20px 5px 20px;
+}
+.z3{
+    font-size: 15px;
+    padding: 5px;
+}
+.sh2{
+    margin: 5px;
+}

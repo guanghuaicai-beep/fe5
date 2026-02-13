@@ -1,0 +1,80 @@
+* {
+    word-spacing: 3px;
+}
+h2{
+    color: #55eb14;
+}
+#heading{
+    color: blue;
+}
+.box > h2{
+    color: red;
+}
+#unique-box{
+    border: 2px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.box > span >.child{
+    color:purple ;
+}
+.simply{
+    color: coral;
+}
+.box{
+    background-color: aqua;
+}
+.inner-box.first-box{
+    color:red;
+}
+.inner-box{
+    color: pink;
+}
+.box .inner-box{
+    background-color: #55eb14;
+}
+.box .inner-box.first-box{ 
+    background-color: black;
+}
+div h2{
+    font-size: 100px;
+}
+
+.first + li{
+    background-color: green;
+}
+.first ~ li{
+    color: black;
+}
+ul{
+    color: red;
+}
+ul li:nth-child(2n+1){
+    font-size: 30px;
+}
+input[type="text"]{
+    border: 2px solid blue;
+    padding: 15px;
+}
+p::first-line{
+    font-weight: bold;
+}
+.pseudo-class:hover{
+    color: red;
+    text-decoration: underline;
+}
+h4,h5{
+    font-size: 26px;
+}
+.zt{
+    color: red;
+}
+.zt.bg{
+    background-color: #55eb14;
+}
+.pp{
+    color: red;
+}
+.pp .kk{
+    color: aqua;
+}

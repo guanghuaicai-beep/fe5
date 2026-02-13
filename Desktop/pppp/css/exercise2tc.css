@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f1f1f1;
+}
+.container{
+    width: 400px;
+    /* ↕上下 左右 */
+    margin: 150px auto;
+}
+/* *{ */
+    /* border: red 2px solid; */
+/* } */
+.card{
+    background-color: #373f4d;
+    color: #fff;
+    border-radius: 8px;
+    padding: 60px 40px;
+    box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.2);
+    text-align: center;
+}
+.card h1{
+    font-size: 18px;
+    font-weight: 100;
+}
+.card p{
+    margin: 10px 0;
+    font-weight: 100;
+    font-size: 10px;
+}
+.card .form-group{
+    margin: 5px 0px;
+}
+.card input{
+    padding: 10px 0px;
+    width: 300px;
+}
+.card input[type="text"]{
+    font-size: 15px;
+    margin: 10px 0px;
+}
+.card button{
+    margin: 15px 0px;
+    background-color: orange;
+    width: 300px;
+    height: 40px;
+    color: #fff;
+    font-size: 18px;
+}
+.card button:hover{
+    background-color: coral;
+    cursor: pointer;
+}

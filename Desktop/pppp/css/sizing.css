@@ -1,0 +1,30 @@
+.box{
+    background-color: darkblue;
+    color: white;
+    padding: 20px;
+    border: 3px solid green;
+    margin: 20px;
+    border-color: red;
+
+}
+.box-1{
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.box-2{
+    width: 40%;
+    display: inline-block;
+}
+.box-3{
+    width: 40%;
+    display: inline-block;
+}
+.box-2 p{
+    width: 50%;
+}
+.box-3{
+    min-width: 500px;
+    max-width: 800px;
+}

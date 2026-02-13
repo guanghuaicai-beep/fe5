@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+}
+@media screen and (max-width: 1200px) {
+    .widesreen{
+        background-color: coral;
+    }
+}
+
+@media (max-width: 992px){
+    .normal{
+        background-color: lightblue;
+    }
+}
+@media (max-width:768px) {
+    .tablet{
+        background-color: lightgreen;
+    }
+}
+@media (max-width:600px) {
+    .phonew{
+        background-color: lightcoral;
+    }
+}
+@media (orientation: landscape) {
+    .landscape{
+        background-color: yellow;
+    }
+}
+@media (max-height: 500px) {
+    .height{
+        background-color: lightseagreen;
+    }
+}
+@media (min-width:768px) and (max-width:991px){
+    body{
+        background-color: #333;
+    }
+}

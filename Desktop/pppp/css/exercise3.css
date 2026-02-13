@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border:red solid 2px; */
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+}
+.s1{
+    
+    height: 100px;
+    background-color: coral;
+    display: flex;
+    /* justify-content: left; */
+    align-items: center;
+    padding: 30px;
+    text-transform: capitalize ;
+}
+.p2{
+    display: flex;
+    margin: 30px;
+}
+p{
+    margin: 30px auto;
+}
+.p22{
+    flex: 0.9;
+}
+.sh3{
+    background: coral;
+    width: 200px;
+    height: 30px;
+    color: white;
+    margin: auto 15px;
+    text-align: left;
+    text-transform: capitalize;
+}
+h3{
+    padding-top: 4px;
+}
+.su1{
+    text-transform: capitalize;
+    padding: 2px auto;
+    /* text-decoration: underline black 2px;  */
+    margin: auto 15px;
+    width: 200px;
+}
+.su1 ul li {
+    position: relative; /* 伪元素定位依赖 */
+    padding-bottom: 10px; /* 保留你原有的下内边距 */
+    margin: 8px 0; /* li 之间加垂直间距，更整洁 */
+}
+.su1 ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0; /* 下划线和 padding-bottom 对齐 */
+    width: 200px; /* 下划线宽度 = 橙色框宽度（200px） */
+    height: 2px; /* 下划线粗细，可按需调整 */
+    background-color:black; /* 下划线颜色和橙色框一致 */
+}
+.li1{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 10px;
+    font-size: 20px;
+}
+ul{
+    list-style: none;
+}
+.su1 ul li{
+    padding-bottom: 10px;
+    /* border-bottom: 2px solid black; */
+}
+/* .su11{ */
+    /* padding-top: 10px; */
+/* } */
+a:hover{
+    color:coral;
+}
+a{
+    color: black;
+    text-decoration: none;
+    /* display: inline-block; */
+    cursor: pointer;
+}

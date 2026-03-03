@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <title>project-home-page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./project.css">
+    <style>
+    /* 下面的 CSS 放在这里 */
+    </style>
+</head>
+<body>
+    <div class="catalogue">
+        <p><i class="fa-brands fa-docker"></i>探索世界</p>
+        <!-- 新增汉堡包按钮（仅加新元素，不修改原有类名） -->
+        <button class="hamburger-btn" aria-label="打開/關閉菜單">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul>
+            <li><a href="./project.html">首頁</a></li>
+            <li><a href="./projec-destination.html">目的地</a></li>
+            <li><a href="./projec-stratrgy.html">旅遊攻略</a></li>
+            <li><a href="./projec-about.html">關於我們</a></li>
+            <li><a href="./project-contact.html">聯絡我們</a></li>
+        </ul>
+    </div>
+    <div class="hm-one">
+        <div class="hm-one-bg">
+            <img src="./sybg.png" alt="山景">
+        </div>
+        <div class="hm-one-title">
+            <h1>探索這個</h1>
+            <h1 class="h12">美麗世界</h1>
+            <span class="hm-one-desc">每一段旅程都是一個新的故事。我們為您精選全球最迷人的目的地， 提供最詳盡的旅遊攻略，讓您的探險之旅從這裡開始。</span>
+            <div class="hm-one-btn">
+                <a href="./projec-destination.html" class="hm-one-btn1">探索目的地<i class="fa-solid fa-arrow-right"></i></a>
+                <a href="./projec-stratrgy.html" class="hm-one-btn2">旅遊攻略</a>
+            </div>
+        </div>
+    </div>
+    <div class="hm-two">
+        <div class="hm-two-one">
+            <span class="span1">FEATURED DESTINATIONS</span>
+            <h1>精選旅遊目的地</h1>
+            <span class="span2">從古老的東方文明到地中海的碧藍海岸，每一個目的地都有其獨特的魅力等待您去發現。</span>
+        </div>
+        <div class="hm-two-two">
+            <div class="bg">
+                <div class="img-container">
+                    <img src="./bjjd.png" alt="日本京都">
+                </div>
+                <h3>日本·京都</h3>
+                <span>千年古都的四季之美</span>
+            </div>
+            <div class="bg">
+                <div class="img-container">
+                    <img src="./xlstny.png" alt="希臘聖托里尼">
+                </div>
+                <h3>希臘·聖托里尼</h3>
+                <span>愛琴海上的藍白夢境</span>
+            </div>
+            <div class="bg">
+                <div class="img-container">
+                    <img src="./fzky.png" alt="非洲肯亞">
+                </div>
+                <h3>非洲·肯亞</h3>
+                <span>野生動物的最後伊甸園</span>
+            </div>
+        </div>
+        <div class="btn">
+            <a href="./projec-destination.html">查看所有目的地<i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+    <div class="explore">
+        <div class="explorebg1">
+            <span class="span1">WHY EXPLORE WORLD</span>
+            <h1 class="h11">為什麼選擇</h1>
+            <h1 class="h12">探索世界？</h1>
+            <span class="span2">我們不只是一個旅遊資訊平台，更是您旅行路上最可靠的夥伴。 從行程規劃到當地文化深度解析，我們提供最全面的旅遊支援。</span>
+            <div class="exploreli">
+                <div class="inexploreli">
+                    <i class="fa-solid fa-1"></i>
+                    <div>
+                        <h3>深度在地知識</h3>
+                        <span>與當地嚮導合作，提供真實的旅行體驗</span>
+                    </div>
+                </div>
+                <div class="inexploreli">
+                    <i class="fa-solid fa-2"></i>
+                    <div>
+                        <h3>即時更新資訊</h3>
+                        <span>持續更新最新的旅遊資訊、簽證要求與安全提示</span>
+                    </div>
+                </div>
+                <div class="inexploreli">
+                    <i class="fa-solid fa-3"></i>
+                    <div>
+                        <h3>個性化行程建議</h3>
+                        <span>根據您的興趣與預算，量身打造最適合的旅遊計畫</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="explorebg2">
+            <img src="./fzdzy.png.jpg" alt="">
+            <h2>非洲大草原</h2>
+            <p>1.2921° S, 36.8219° E · KENYA</p>
+        </div>
+    </div>
+    <div class="homepagebottom">
+        <span class="span1">NEWSLETTER</span>
+        <h1>訂閱旅遊靈感</h1>
+        <span class="span2">每週收到精選目的地介紹、旅遊優惠與獨家攻略， 讓您的下一段旅程從這裡開始。</span>
+        <div class="btnbg">
+            <form action="" id="subscribeForm">
+                <input type="email" name="email" id="email" placeholder="請輸入你的郵箱或者電子郵件">
+            </form>
+        </div>
+        <a id="subscribeForm">立即訂閱</a>
+    </div>
+    <script src="./projectburger.js"></script>
+</body>
+</html>

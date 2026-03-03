@@ -1,0 +1,28 @@
+let output;
+// const parent = document.querySelector(".parent");
+// output = parent.children;
+// console.dir(output);
+// output = parent.children[1].innerText;
+// output = parent.children[1].className;
+// output = parent.children[1].nodeName;
+// parent.children[1].style.color="red";
+// parent.firstElementChild.style.color="blue";
+// parent.lastElementChild.style.color="green";
+// // console.log(output);
+// output = document.getElementsByClassName("item");
+// output = secondChild = document.getElementsByClassName("item")[1];
+// output = secondChild.parentElement;
+const parent = document.querySelector(".parent");
+output = parent.childNodes;
+output = parent.childNodes[2].nodeName;
+output = parent.childNodes[2].nodeType;
+console.log(output);
+output = parent.childNodes[2].outerHTMl;
+output = parent.firstChild;
+output = parent.lastChild;
+output = parent.lastChild.textContent = "hello";
+const childnode = document.querySelector(".item");
+output = childnode;
+output = childnode.parentNode;
+
+console.log(output);

@@ -1,0 +1,367 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    line-height: 1.2;
+}   
+.catalogue{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 70px;
+    background: rgb(10, 24, 48);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.catalogue p{
+    margin: 0;
+    padding-left: 50px;
+    font-size: 30px;
+}
+.catalogue ul{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+.catalogue ul a{
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+.catalogue ul a:hover{
+    color: rgba(255, 255, 255, 0.7);
+    
+}
+/* 下划线伪元素（初始隐藏） */
+.catalogue ul li a::after {
+    content: ""; /* 伪元素必须有content */
+    position: absolute;
+    left: 0;
+    bottom: 0; /* 下划线在文字底部 */
+    width: 0; /* 初始宽度0，隐藏下划线 */
+    height: 2px; /* 下划线高度 */
+    background-color: #d4af37; /* 金色下划线，和整体风格统一 */
+    transition: width 0.3s ease; /* 0.3秒完成宽度过渡，ease让动画更丝滑 */
+}
+
+/* hover 时下划线滑出（宽度变100%） */
+.catalogue ul li a:hover::after {
+    width: 100%; /* 宽度变100%，下划线滑出 */
+}
+
+/* ========== 新增：汉堡包按钮样式 ========== */
+/* 汉堡包按钮基础样式（大屏隐藏） */
+.hamburger-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-left: auto; /* 按钮靠右对齐 */
+    display: none; /* 大屏默认隐藏 */
+    padding-right: 20px; /* 右侧留边距，不贴边 */
+    transition: color 0.3s;
+}
+.hamburger-btn:hover {
+    color: #d4af37; /* hover变金色，和下划线呼应 */
+}
+
+/* ========== 新增：媒体查询（小屏适配，768px以下） ========== */
+@media (max-width: 768px) {
+    /* 1. 显示汉堡包按钮 */
+    .hamburger-btn {
+        display: block;
+    }
+
+    /* 2. 小屏时菜单默认隐藏，改为垂直布局 */
+    .catalogue ul {
+        /* 脱离文档流，在导航下方展开 */
+        position: absolute;
+        top: 70px; /*和导航高度一致，刚好在下方*/
+        left: 0;
+        right: 0;
+        background: rgb(10, 24, 48);
+        flex-direction: column; /* 垂直排列 */
+        gap: 1.5rem; /* 垂直间距 */
+        padding: 2rem 50px; /* 上下内边距，左右和logo对齐 */
+        display: none; /*默认隐藏*/
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 轻微阴影，分层 */
+    }
+
+    /* 3. 菜单展开时显示 */
+    .catalogue ul.active {
+        display: flex;
+    }
+
+    /* 4. 小屏时导航gap清零，避免排版错乱 */
+    .catalogue {
+        gap: 0;
+    }
+
+    /* 5. 小屏缩小logo字体，适配空间 */
+    .catalogue p {
+        font-size: 24px;
+        padding-left: 20px;
+    }
+}
+
+.aboutbottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #001A33;
+    padding-top: 70px;
+    padding-bottom: 100px;
+    h1{
+        color: #FFFFFF;
+        margin-bottom: 10px;
+        font-size: 2rem;
+    }
+    span{
+        color: #C0C4C8;
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+    a{
+        background: #F5B030;
+        border-radius: 8px;
+        padding: 10px 20px;
+        cursor: pointer;
+        text-decoration: none;
+        color: black;
+        i{
+            padding-left: 15px;
+        }
+    }
+    a:hover{
+        background: #E09F20;
+        transform: translateY(-3px);
+    }
+}
+
+.ourmissionbg{
+    background: #FAF7F0;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.ourmission{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "left right";
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+    .ourmissionbg1{
+        .span1{
+            color: #D49A3A;
+            border: 1px #D49A3A solid;
+            font-size: 0.9rem;
+        }
+        .span2{
+            color: #4A5568;
+            display: block;
+            margin: 20px auto;
+        }
+        .title1{
+            margin-top: 10px;
+            color: #0A1830;
+            font-size: 3rem;
+        }
+        .title2{
+            color: #D49A3A;
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+    }
+    .ourmissionbg2{
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        grid-template-areas:
+        "lefttop righttop"
+        "leftbottom rightbottom";
+        gap: 50px;
+        .inourmissionbg2{
+            background: #FFFFFF;
+            border-radius: 8px;
+            padding: 10px 10px;
+        }
+        h3{
+            margin: 10px auto;
+            font-size: 1.1rem;
+        }
+        span{
+            color: #4A5568;
+        }
+        i{
+            font-size: 1.2rem;
+        }
+    }
+}
+@media (max-width:768px){
+    .ourmission{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+}
+
+.aboutourbg{
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    /* 背景图：铺满全屏，保持比例 */
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 等比缩放，覆盖整个容器 */
+        z-index: 1; /* 图片在最底层 */
+    }
+    .ztstyle{
+        position: absolute;
+        z-index: 2;
+        top:75%;
+        left: 7%;
+        span{
+            display: block;
+        }
+        h1{
+            color: #FFFFFF;
+            font-size: 2.5rem;
+            margin: 10px 0px;
+        }
+        .s2{
+            color:orange;
+            font-size: 1.1rem;
+        }
+        .s1{
+            color: #D49A3A;
+            border: #D49A3A 1px solid;
+            width: 170px;
+        }
+    }
+}
+@media (max-width:768px){
+    .aboutourbg{
+        .ztstyle{
+            left: 5%;
+            .s2{
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+.ourjourney{
+    background: #F3EFE6;
+    padding: 50px 30px;
+    margin: auto;
+    .part1{
+        span{
+            color: #D49A3A;
+            border: 1px #D49A3A solid;
+            font-size: 1.1rem;
+            max-width: 130px;
+        }
+        h2{
+            font-size: 3rem;
+            margin-top: 15px;
+        }
+    }
+    .part2{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding-left: 700px;
+        gap: 40px;
+        .s1{
+            color: darkorange;
+        }
+        .s2{
+            color: #4A5568;
+        }
+        .part2bg{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .part2bg::after{
+            content: '';
+            position: absolute;
+            left: -50px; /* 圆点位置，对齐时间线 */
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%; /* 圆形 */
+            background-color: #FFFFFF; /* 白色圆心 */
+            border: 2px solid #D49A3A; /* 金色边框 */
+            z-index: 3; /* 盖在时间线上 */
+        }
+    }
+    .part2::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 40%;
+        width: 2px;
+        height: 100%;
+        background-color: #D4D4D4;
+        z-index: 1;
+    }
+    span{
+        display: block;
+    }
+}
+
+@media (min-width:1200px) and (max-width:1600px){
+    .ourjourney{
+        .part2{
+            padding-left: 500px;
+        }
+        .part2::before{
+            left: 460px;
+        }
+    }
+}
+@media (min-width:992px) and (max-width:1199px){
+    .ourjourney{
+        .part2{
+            padding-left: 300px;
+        }
+        .part2::before{
+            left: 260px;
+        }
+    }
+}
+@media (min-width:769px) and (max-width:991px){
+    .ourjourney{
+        .part2{
+            padding-left: 100px;
+        }
+        .part2::before{
+            left: 60px;
+        }
+    }
+}
+@media (max-width:768px){
+    .ourjourney{
+        .part2{
+            padding-left: 100px;
+        }
+        .part2::before{
+            left: 60px;
+        }
+    }
+}

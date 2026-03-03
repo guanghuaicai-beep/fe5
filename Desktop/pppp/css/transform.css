@@ -1,0 +1,15 @@
+.container{
+    max-width: 600px;
+    margin: 130px auto;
+    display: flex;
+    justify-content: center;
+
+}
+.logo{
+    max-width: 60%;
+    transition: all 0.5s;
+}
+.logo:hover{
+    transform: rotate(-90deg);
+    transform: scale(2);
+}

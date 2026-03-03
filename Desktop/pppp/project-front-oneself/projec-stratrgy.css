@@ -1,0 +1,200 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    line-height: 1.2;
+}   
+.catalogue{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 70px;
+    background: rgb(10, 24, 48);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.catalogue p{
+    margin: 0;
+    padding-left: 50px;
+    font-size: 30px;
+}
+.catalogue ul{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+.catalogue ul a{
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+.catalogue ul a:hover{
+    color: rgba(255, 255, 255, 0.7);
+    
+}
+/* 下划线伪元素（初始隐藏） */
+.catalogue ul li a::after {
+    content: ""; /* 伪元素必须有content */
+    position: absolute;
+    left: 0;
+    bottom: 0; /* 下划线在文字底部 */
+    width: 0; /* 初始宽度0，隐藏下划线 */
+    height: 2px; /* 下划线高度 */
+    background-color: #d4af37; /* 金色下划线，和整体风格统一 */
+    transition: width 0.3s ease; /* 0.3秒完成宽度过渡，ease让动画更丝滑 */
+}
+
+/* hover 时下划线滑出（宽度变100%） */
+.catalogue ul li a:hover::after {
+    width: 100%; /* 宽度变100%，下划线滑出 */
+}
+
+/* ========== 新增：汉堡包按钮样式 ========== */
+/* 汉堡包按钮基础样式（大屏隐藏） */
+.hamburger-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-left: auto; /* 按钮靠右对齐 */
+    display: none; /* 大屏默认隐藏 */
+    padding-right: 20px; /* 右侧留边距，不贴边 */
+    transition: color 0.3s;
+}
+.hamburger-btn:hover {
+    color: #d4af37; /* hover变金色，和下划线呼应 */
+}
+
+/* ========== 新增：媒体查询（小屏适配，768px以下） ========== */
+@media (max-width: 768px) {
+    /* 1. 显示汉堡包按钮 */
+    .hamburger-btn {
+        display: block;
+    }
+
+    /* 2. 小屏时菜单默认隐藏，改为垂直布局 */
+    .catalogue ul {
+        /* 脱离文档流，在导航下方展开 */
+        position: absolute;
+        top: 70px; /*和导航高度一致，刚好在下方*/
+        left: 0;
+        right: 0;
+        background: rgb(10, 24, 48);
+        flex-direction: column; /* 垂直排列 */
+        gap: 1.5rem; /* 垂直间距 */
+        padding: 2rem 50px; /* 上下内边距，左右和logo对齐 */
+        display: none; /*默认隐藏*/
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 轻微阴影，分层 */
+    }
+
+    /* 3. 菜单展开时显示 */
+    .catalogue ul.active {
+        display: flex;
+    }
+
+    /* 4. 小屏时导航gap清零，避免排版错乱 */
+    .catalogue {
+        gap: 0;
+    }
+
+    /* 5. 小屏缩小logo字体，适配空间 */
+    .catalogue p {
+        font-size: 24px;
+        padding-left: 20px;
+    }
+}
+
+.planning{
+    background: #F3EFE6;
+    padding: 50px;
+    .inplanning{
+        display: flex;   
+        flex-direction: column;
+        justify-content: center;
+    }
+    .inplanningbg1{
+        span{
+            color: #D49A3A;
+            border: 1px solid #D49A3A;
+            width: 117px;
+        }
+        h2{
+            font-size: 3rem;
+            margin: 20px 0px;
+        }
+    }
+    .inplanningbg2{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr  ; 
+        gap: 20px;
+        grid-template-areas: 
+        "lt szj rt"
+        "lb xzj tb";
+        .pllayout{
+            border-radius: 8px;
+            background: #ffffff;
+            padding: 10px;
+            i{
+                font-size: 1.5rem;
+            }
+            span{
+                display: block;
+                color: #4A5568;
+                padding: 10px 0px;
+            }
+            h3{
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+@media (max-width:768px){
+    .planning{
+        .inplanningbg2{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+    }   
+}
+.stratrgybg{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-items: left;
+    background: rgba(10, 24, 48);
+    height: 400px;
+    span{
+        display: block;
+    }
+    h1{
+        color: white;
+        font-size: 4rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .s1{
+        font-size: 1.1rem;
+        color: #d4fa37;
+        border: 1px solid;
+        max-width: 205px;
+    }
+    .s2{
+        font-size: 1.3rem;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 2;
+        max-width: 500px;
+    }
+    .position{
+        position: absolute;
+        top:40%;
+        left: 5%;
+    }
+}

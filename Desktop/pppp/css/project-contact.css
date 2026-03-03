@@ -1,0 +1,301 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: solid 1px red; */
+}
+body{
+    line-height: 1.6;
+}
+.catalogue{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 70px;
+    background: rgb(10, 24, 48);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.catalogue p{
+    margin: 0;
+    padding-left: 50px;
+    font-size: 30px;
+}
+.catalogue ul{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+.catalogue ul a{
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+.catalogue ul a:hover{
+    color: rgba(255, 255, 255, 0.7);
+    
+}
+/* 下划线伪元素（初始隐藏） */
+.catalogue ul li a::after {
+    content: ""; /* 伪元素必须有content */
+    position: absolute;
+    left: 0;
+    bottom: 0; /* 下划线在文字底部 */
+    width: 0; /* 初始宽度0，隐藏下划线 */
+    height: 2px; /* 下划线高度 */
+    background-color: #d4af37; /* 金色下划线，和整体风格统一 */
+    transition: width 0.3s ease; /* 0.3秒完成宽度过渡，ease让动画更丝滑 */
+}
+
+/* hover 时下划线滑出（宽度变100%） */
+.catalogue ul li a:hover::after {
+    width: 100%; /* 宽度变100%，下划线滑出 */
+}
+.hm-one{
+    background: rgb(10, 24, 48);
+    color: white;
+    height: 400px; 
+    display: flex;
+    justify-content: left;
+    align-items: center;  
+    /* padding: 2rem 4rem; */
+}
+.hm-one-in{
+    /* 最小值 用父容器寬度的百分之15 最大值 */
+    margin-left: clamp(20px, 10%, 300px); /* 核心适配 */
+    margin-top: clamp(20px, 5%, 400px);
+    max-width: 800px; /* 限制文字宽度 */
+    width: 100%;
+}
+.hamburger-btn{
+    background: transparent;
+    border:none;
+    font-size: 1.8rem;
+    display: none;
+    cursor: pointer;
+    color: white;
+    margin-left: auto;
+    padding-right: 20px;
+    transition: color 0.3 ease;
+}
+.hamburger-btn:hover{
+    color: #d4af37;
+}
+/* 可选：手机端适配 */
+@media (max-width: 768px) {
+    .hm-one-in {
+        margin-left: clamp(10px, 10%, 150px);
+        margin-top: clamp(10px, 2.5%, 200px);
+    }
+    .hm-one-in h1{
+        font-weight: 450;
+        font-size: 2rem;
+    }
+    .hamburger-btn{
+        display: block;
+    }
+    .catalogue ul{
+        position: absolute;
+        background: rgb(10, 24, 48);
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;  
+        gap: 1.5rem;
+        padding: 2rem 50px; /* 上下内边距，左右和logo对齐 */
+        display: none;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 轻微阴影，分层 */
+    }
+    .catalogue{
+        gap: 0;
+    }
+    .catalogue ul.active{
+        display: flex;
+    }
+}
+.hm-one-in h1{
+    font-weight: 900;
+    font-size: 4rem;
+}
+.hm-one-in-p2{  
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 2;
+}
+.hm-one-in-p1{
+    font-size: 1.1rem;
+    color: #d4fa37;
+    border: 1px solid;
+    max-width: 180px;
+}
+.hm-two{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    background: rgba(250, 248, 242);
+    justify-content: center;
+    padding: 5rem;
+}
+.hm-two-in{
+    flex: 1 1 280px; /* 伸缩性=1，基础宽度=280px，保证同列卡片等高宽 */
+    max-width: 350px; /* 统一卡片最大宽度，所有卡片不超这个宽度 */
+    min-width: 280px; /* 保留最小宽度，避免小屏太窄 */
+    background: #FFFFFF;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.hm-two-in .hm-two-in-p2{
+    color: rgb(10, 24, 48);
+    font-size: 1.1rem;
+}
+.hm-two-in p{
+    color: #666666;
+}
+
+.hm-three{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #F2EDE4;
+}
+
+.hm-three-one{
+    margin: 20px auto;
+}
+.hm-three-one-p1{
+    color: #D48A4C;
+    border: solid #D48A4C 3px;
+    width: 160px;
+}
+.hm-three-one h2{
+    margin: 10px auto;
+    font-size: 2rem;
+}
+.hm-three-one-p2{
+    color: #666666;
+    margin-bottom: -10px;
+}
+
+.hm-three-two {
+    width: 100%;
+    max-width: 600px; 
+}
+.hm-three-two-bg{
+    background: #FFFFFF;
+    margin:10px;
+    padding: 15px 25px;
+    border-radius: 8px;
+}
+.hm-three-two-p2{
+    color: #666666;
+    font-size: 0.8rem;
+}
+.hm-three-two-p1{
+    font-size: 1.1rem;
+}
+.hm-three-two-social{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+.hm-three-two-social i{
+    padding-top: 4px;
+    font-size: 1.8rem;
+}
+.hm-three-three{
+    max-width: 600px;
+    width: 100%;
+    background: rgb(10, 24, 48);
+    border-radius: 8px;
+    padding: 25px 30px;
+    margin-top: 5px;
+    color: white;
+    margin-bottom: 15px;
+}
+.hm-three-three h2{
+    color: orange;
+    font-size: 2rem;
+}
+.hm-three-three .p2{
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 10px auto;
+}
+.hm-three-three .p1{
+    font-size: 1.1rem   ;
+}
+
+.hm-four{
+    background: rgba(250, 248, 242);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    padding-bottom: 100px;
+}
+.hm-four-one{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.hm-four-one span{
+    color: #D48A4C;
+    border: solid #D48A4C 1px;
+    margin-bottom: -10px;
+}
+.hm-four-one h2{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.hm-four-two{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    gap: 10px;
+}
+.faq-item{
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    border: 1px solid #E0D8C8;
+    overflow: hidden;
+    cursor: pointer;
+}
+.faq-item-question{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+.arrow{
+    margin-left: auto;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+.faq-item-question:hover{
+    background: #FAF7F0;
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden; 
+    padding: 0 20px; 
+    color: #666;
+    line-height: 1.6;
+    /* transition: max-height 0.1s ease, padding 0.1s ease; 下拉动画 */
+}
+/* .faq-item.active .faq-answer {
+    padding: 0 20px 15px; /* 底部加15px内边距，避免贴边 
+} */
+.faq-item.active .arrow {
+    transform: rotate(180deg); /* 箭头旋转180度（向下→向上） */
+}
+

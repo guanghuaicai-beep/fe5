@@ -325,6 +325,16 @@ body{
     }
 }
 
+@media (min-width:1601px) and (max-width:1700px){
+    .ourjourney{
+        .part2{
+            padding-left: 550px;
+        }
+        .part2::before{
+            left: 510px;
+        }
+    }
+}
 @media (min-width:1200px) and (max-width:1600px){
     .ourjourney{
         .part2{
@@ -363,5 +373,82 @@ body{
         .part2::before{
             left: 60px;
         }
+    }
+}
+
+.layoutbottom{
+    padding: 30px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 200px;
+    background: rgba(10, 24, 48);
+    .header{
+        max-width: 300px;
+        span{
+            margin: 10px auto;
+        }
+    }
+    h2,h3{
+        color: white;
+        font-size: 1.3rem;
+    }
+    li,span{
+        cursor: pointer;
+        color: #ffffff;
+        font-size: 0.9rem;
+        margin: 10px 0px;
+    }
+    ul{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+        color: #ffffff;
+        position: relative;
+    }
+    ul li a::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #d4af37;
+        transition: width 0.3s ease;   
+    }
+    ul li a:hover::after{
+        width: 100%;
+    }
+    span{
+        display: block;
+    }
+    i{
+        color: #ffffff;
+    }
+    .lthover li:hover,.lthover a:hover{
+        color: #D49A3A;
+    }
+}
+@media (min-width:1200px) and (max-width:1600px){
+    .layoutbottom{
+        gap: 150px;
+    }
+}
+@media (min-width:992px) and (max-width:1199px){
+    .layoutbottom{
+        gap: 100px;
+    }
+}
+@media (min-width:769px) and (max-width:991px){
+    .layoutbottom{
+        gap: 30px;
+    }
+}
+@media (max-width:768px){
+    .layoutbottom{
+        flex-direction: column;
+        gap: 30px;
     }
 }

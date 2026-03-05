@@ -216,13 +216,14 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #F2EDE4;
+    background: #FAF8F0;
 }
 .hm-two-one{
     margin: 50px auto;
     margin-left: 100px;
 }
 .hm-two-one .span1{
+    width: 210px;
     border: 2px orange solid;
     color: orange;
 }
@@ -234,51 +235,7 @@ body{
     font-size: 1.1rem;
     color: #666666;
 }
-/* 核心：景点卡片容器 → 网格布局实现三列均分 */
-.hm-two-two {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 固定三列，宽度均分 */
-    gap: 50px; /* 卡片之间的间距 */
-    width: 100%;
-    max-width: 1400px; /* 限制最大宽度，大屏不拉伸 */
-    margin: 0 auto 50px; /* 上下居中，底部留间距 */
-}
-.hm-two-two .bg{
-    background: white;
-    padding-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 12px; 
-    height: auto;
-    overflow: hidden;
-}
-.hm-two-two .bg:hover{
-    transform: translateY(-10px);
-}
-.hm-two-two .img-container {
-    width: 100%;
-    height: 300px; /* 固定容器高度，大屏不挤文字 */
-    overflow: hidden; /* 图片放大的部分只裁剪，不撑高 */
-}
-.hm-two-two img{
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    transition: transform 1s ease;
-}
-/* 添加圖片放大 */
-.hm-two-two .bg:hover img {
-    transform: scale(1.1);
-}
-.hm-two-two h3{
-    font-size: 1.5rem;
-}
-.hm-two-two span{
-    color: #666666;
-    font-size: 1.1rem;
-    margin-top: 10px;
-}
+
 .hm-two .btn a{
     text-decoration: none;
     color: rgb(10, 24, 48);
@@ -306,14 +263,6 @@ body{
     }
     .hm-two-two .bg{
         margin: 10px auto;
-    }
-    .hm-two-two {
-        grid-template-columns: 1fr; /* 小屏只显示一列 */
-        gap: 20px;
-    }
-    .hm-two-two img {
-        height: 280px; /* 小屏固定图片高度 */
-        object-fit: cover; /* 核心：填满卡片，减少留白 */
     }
 }
 
@@ -450,7 +399,7 @@ body{
         }
     }
 }
-@media (min-width:1200px) and (max-width:1600px){
+@media (min-width:1200px) and (max-width:1700px){
     .explore{
         .explorebg1{
             max-width: 500px;
@@ -461,17 +410,17 @@ body{
         }
     }
 }
-@media (min-width:992px) and (max-width:1199px){
+@media (min-width:992px) and (max-width:1200px){
     .explore{
         .explorebg1{
             max-width: 450px;
         }
         .explorebg2{
-            max-width: 450px;
+            max-width: 400px;
         }
     }
 }
-@media (min-width:768px) and (max-width:991px){
+@media (min-width:768px) and (max-width:992px){
     .explore{
         padding-bottom: 20px;
         .explorebg1{
@@ -485,6 +434,190 @@ body{
             img{
                 align-items: center;
             }
+        }
+    }
+}
+
+.layoutbottom{
+    padding: 30px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 200px;
+    background: rgba(10, 24, 48);
+    .header{
+        max-width: 300px;
+        span{
+            margin: 10px auto;
+        }
+    }
+    h2,h3{
+        color: white;
+        font-size: 1.3rem;
+    }
+    li,span{
+        cursor: pointer;
+        color: #ffffff;
+        font-size: 0.9rem;
+        margin: 10px 0px;
+    }
+    ul{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+        color: #ffffff;
+        position: relative;
+    }
+    ul li a::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #d4af37;
+        transition: width 0.3s ease;   
+    }
+    ul li a:hover::after{
+        width: 100%;
+    }
+    span{
+        display: block;
+    }
+    i{
+        color: #ffffff;
+    }
+    .lthover li:hover,.lthover a:hover{
+        color: #D49A3A;
+    }
+}
+@media (min-width:1200px) and (max-width:1600px){
+    .layoutbottom{
+        gap: 150px;
+    }
+}
+@media (min-width:992px) and (max-width:1199px){
+    .layoutbottom{
+        gap: 100px;
+    }
+}
+@media (min-width:769px) and (max-width:991px){
+    .layoutbottom{
+        gap: 30px;
+    }
+}
+@media (max-width:768px){
+    .layoutbottom{
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+.hm-two{
+    .imglayout{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 100px;
+        grid-template-areas: "tl tm tr";
+        margin-bottom: 50px;
+        .bg{
+            /* padding: 10px; */
+            max-width: 400px;
+            background: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px #4A5568;
+            .introduce-container{
+                padding: 10px;
+                .s3{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    a:hover{
+                        transform: translateX(-5px);
+                    }
+                }
+            }
+        }
+        .bg:hover{
+            transform: translateY(-5px);
+        }
+        .img-container{
+            position: relative;
+            overflow: hidden;
+        }
+        img{
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            width: 100%;
+            object-fit: contain;
+            transform-origin: center center;
+        }
+        img:hover{
+            transform: scale(1.1);
+        }
+        .s1{
+            font-size: 0.9rem;
+            color: orange;
+        }
+        h3{
+            font-size: 1.3rem;
+            margin-top: 10px;
+        }
+        .s2{
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            color: #4A5568;
+        }
+        i{
+            color: orange;
+        }
+        
+        
+    }
+    span{
+        display: block;
+    }
+    a{
+        text-decoration: none;
+        color: orange;
+        padding-right: 0px;
+    }
+}
+@media (min-width:1200px) and (max-width:1600px){
+    .hm-two{
+        .imglayout{
+            .bg{
+                max-width: 300px;
+            }
+        }
+    }
+}
+@media (min-width:992px) and (max-width:1199px){
+    .hm-two{
+        .imglayout{
+            .bg{
+                max-width: 200px;
+            }
+        }
+    }
+}
+@media (min-width:769px) and (max-width:991px){
+    .hm-two{
+        .imglayout{
+            .bg{
+                max-width: 180px;
+            }
+        }
+    }
+}
+@media (max-width:768px){
+    .hm-two{
+        .imglayout{
+            display: flex;
+            flex-direction: column;
         }
     }
 }

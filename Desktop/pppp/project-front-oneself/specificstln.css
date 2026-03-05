@@ -1,0 +1,443 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    line-height: 1.2;
+}   
+.catalogue{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 70px;
+    background: rgb(10, 24, 48);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.catalogue p{
+    margin: 0;
+    padding-left: 50px;
+    font-size: 30px;
+}
+.catalogue ul{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+.catalogue ul a{
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+.catalogue ul a:hover{
+    color: rgba(255, 255, 255, 0.7);
+    
+}
+/* 下划线伪元素（初始隐藏） */
+.catalogue ul li a::after {
+    content: ""; /* 伪元素必须有content */
+    position: absolute;
+    left: 0;
+    bottom: 0; /* 下划线在文字底部 */
+    width: 0; /* 初始宽度0，隐藏下划线 */
+    height: 2px; /* 下划线高度 */
+    background-color: #d4af37; /* 金色下划线，和整体风格统一 */
+    transition: width 0.3s ease; /* 0.3秒完成宽度过渡，ease让动画更丝滑 */
+}
+
+/* hover 时下划线滑出（宽度变100%） */
+.catalogue ul li a:hover::after {
+    width: 100%; /* 宽度变100%，下划线滑出 */
+}
+
+/* ========== 新增：汉堡包按钮样式 ========== */
+/* 汉堡包按钮基础样式（大屏隐藏） */
+.hamburger-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-left: auto; /* 按钮靠右对齐 */
+    display: none; /* 大屏默认隐藏 */
+    padding-right: 20px; /* 右侧留边距，不贴边 */
+    transition: color 0.3s;
+}
+.hamburger-btn:hover {
+    color: #d4af37; /* hover变金色，和下划线呼应 */
+}
+
+/* ========== 新增：媒体查询（小屏适配，768px以下） ========== */
+@media (max-width: 768px) {
+    /* 1. 显示汉堡包按钮 */
+    .hamburger-btn {
+        display: block;
+    }
+
+    /* 2. 小屏时菜单默认隐藏，改为垂直布局 */
+    .catalogue ul {
+        /* 脱离文档流，在导航下方展开 */
+        position: absolute;
+        top: 70px; /*和导航高度一致，刚好在下方*/
+        left: 0;
+        right: 0;
+        background: rgb(10, 24, 48);
+        flex-direction: column; /* 垂直排列 */
+        gap: 1.5rem; /* 垂直间距 */
+        padding: 2rem 50px; /* 上下内边距，左右和logo对齐 */
+        display: none; /*默认隐藏*/
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 轻微阴影，分层 */
+    }
+
+    /* 3. 菜单展开时显示 */
+    .catalogue ul.active {
+        display: flex;
+    }
+
+    /* 4. 小屏时导航gap清零，避免排版错乱 */
+    .catalogue {
+        gap: 0;
+    }
+
+    /* 5. 小屏缩小logo字体，适配空间 */
+    .catalogue p {
+        font-size: 24px;
+        padding-left: 20px;
+    }
+}
+
+.specificheader{
+    margin-top: 65px;
+    position: relative;
+    .img-container{
+        height: 300px;
+        img{
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            object-fit: cover;
+        }
+    }
+    .z-container{
+        position: absolute;
+        top: 60%;
+        left: 5%;
+        h1{
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+        span{
+            color: white;
+            font-size: 1.25rem;
+        }
+        .s2{
+            i{
+                color: orange;
+            }
+        }
+    }
+}
+@media (max-width:768px){
+    .specificheader{
+        .z-container{
+            top: 70%;
+            left: 6%;
+            h1{
+                font-size: 2rem;
+            }
+            span{
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+.specificmain{
+    background: #FAF8F0;
+    padding: 50px 100px;
+    display: grid;
+    grid-template-columns:2fr 1fr;
+    ul{
+        list-style: none;
+        i{
+            color:orange
+        }
+    }
+    .left{
+        display: flex;
+        flex-direction: column;
+        .title{
+            background: #ffffff;
+            padding: 30px;
+            max-width: 900px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #4A5568;
+            margin-bottom: 15px;
+            p{
+                color: #4A5568;
+                font-size: 1.25rem;
+            }
+        }
+        .mustspot{
+            background: #ffffff;
+            padding: 30px;
+            max-width: 900px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #4A5568;
+            margin-bottom: 15px;
+            h2{
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+            .list{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                gap: 20px;
+                h3{
+                    color: #4A5568;
+                    font-size: 1.25rem;
+                }
+            }
+        }
+        .tip{
+            background: #ffffff;
+            padding: 30px;
+            max-width: 900px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #4A5568;
+            margin-bottom: 15px;
+            h2{
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+            ul{
+                color: #4A5568;
+                font-size: 1.25rem;
+                li{
+                    margin: 10px;
+                }
+            }
+        }
+        .advice{
+            background: #ffffff;
+            padding: 30px;
+            max-width: 900px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #4A5568;
+            margin-bottom: 15px;
+            h2{
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+            ul{
+                color: #4A5568;
+                font-size: 1.25rem;
+                li{
+                    margin: 10px;
+                }
+            }
+        }
+    }
+    .right{
+        background: #ffffff;
+        max-height: 300px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px #4A5568;
+        padding: 30px;
+        i{
+            color: orange;
+            margin-right: 5px;
+        }
+        .bg{
+            margin-bottom: 15px;
+            h3{
+                font-size: 0.9rem;
+                margin-bottom: 5px;
+            }
+            span{
+                color: #4A5568;
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+@media (min-width:1200px) and (max-width:1600px){
+    .specificmain{
+        .left{
+            .title{
+                max-width: 660px;
+            }
+            .mustspot{
+                max-width: 660px;
+                .list{
+                    h3{
+                        font-size: 1.1rem;
+                    }
+                }
+
+            }
+            .tip{
+                max-width: 660px;
+            }
+            .advice{
+                max-width: 660px;
+            }
+        }
+        .right{
+            .bg{
+                h3{
+                    font-size: 0.8rem;
+                }
+                span{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+@media (min-width:992px) and (max-width:1199px){
+    .specificmain{
+        .left{
+            .title{
+                max-width: 520px;
+            }
+            .mustspot{
+                max-width: 520px;
+            }
+            .tip{
+                max-width: 520px;
+            }
+            .advice{
+                max-width: 520px;
+            }
+        }
+        .right{
+            .bg{
+                h3{
+                    font-size: 0.8rem;
+                }
+                span{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+@media (min-width:769px) and (max-width:991px){
+    .specificmain{
+        .left{
+            .title{
+                max-width: 360px;
+            }
+            .mustspot{
+                max-width: 360px;
+            }
+            .tip{
+                max-width: 360px;
+            }
+            .advice{
+                max-width: 360px;
+            }
+        }
+        .right{
+            .bg{
+                h3{
+                    font-size: 0.8rem;
+                }
+                span{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+@media (max-width:768px){
+    .specificmain{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.layoutbottom{
+    padding: 30px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 200px;
+    background: rgba(10, 24, 48);
+    .header{
+        max-width: 300px;
+        span{
+            margin: 10px auto;
+        }
+    }
+    h2,h3{
+        color: white;
+        font-size: 1.3rem;
+    }
+    li,span{
+        cursor: pointer;
+        color: #ffffff;
+        font-size: 0.9rem;
+        margin: 10px 0px;
+    }
+    ul{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+        color: #ffffff;
+        position: relative;
+    }
+    ul li a::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #d4af37;
+        transition: width 0.3s ease;   
+    }
+    ul li a:hover::after{
+        width: 100%;
+    }
+    span{
+        display: block;
+    }
+    i{
+        color: #ffffff;
+    }
+    .lthover li:hover,.lthover a:hover{
+        color: #D49A3A;
+    }
+}
+@media (min-width:1200px) and (max-width:1600px){
+    .layoutbottom{
+        gap: 150px;
+    }
+}
+@media (min-width:992px) and (max-width:1199px){
+    .layoutbottom{
+        gap: 100px;
+    }
+}
+@media (min-width:769px) and (max-width:991px){
+    .layoutbottom{
+        gap: 30px;
+    }
+}
+@media (max-width:768px){
+    .layoutbottom{
+        flex-direction: column;
+        gap: 30px;
+    }
+}

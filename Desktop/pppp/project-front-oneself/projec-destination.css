@@ -18,6 +18,9 @@ body{
     display: flex;
     align-items: center;
     gap: 2rem;
+    a{
+        color: #FAF7F0;
+    }
 }
 .catalogue p{
     margin: 0;

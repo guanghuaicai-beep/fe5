@@ -242,13 +242,17 @@ body{
         overflow: hidden;
         box-shadow: 0 2px 8px #4A5568;
         .ztlayout{
-            padding: 10px;
+            padding: 20px;
+            p{
+                margin-bottom: 20px;
+            }
             .ztlayouttop,.ztlayoutbottom{
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
             }
             .ztlayoutbottom{
+                position: relative;
                 margin-top: 10px;
                 .part2 a,.part2 i{
                     color: orange;
@@ -260,14 +264,27 @@ body{
                     font-size: 0.9rem;
                 }
                 .part2{
+                    margin-top: 10px;
                     cursor: pointer;
                 }
+
+            }
+            .ztlayoutbottom::before{
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                top: -2px;
+                left: 0;
+                background-color: #DED7C9;
+                    
             }
             .ztlayouttop{
                 margin-bottom: 10px;
                 i{
                     color: orange;
                 }
+
             }
         }
     }
